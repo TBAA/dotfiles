@@ -3,7 +3,7 @@
 " ================
 syntax on                 " Enable syntax highlighting
 filetype plugin indent on " Enable filetype-specific indenting and plugins
-
+colorscheme wombat
 augroup myfiletypes
   " Clear old autocmds in group
   autocmd!
@@ -22,35 +22,35 @@ map <Leader>gac :Gcommit -m -a ""<LEFT>
 map <Leader>gc :Gcommit -m ""<LEFT>
 map <Leader>gs :Gstatus<CR>
 map <Leader>f :sp spec/factories.rb<CR>
-map <Leader>fa :sp test/factories.rb<CR>
+map <Leader>m :Rmodel 
+map <Leader>sc :sp db/schema.rb<cr>
+map <Leader>vi :tabe ~/.vimrc<CR>
+map <Leader>w <C-w>w " Next Buffer
+map <Leader>u :Runittest 
+map <Leader>vc :RVcontroller 
+map <Leader>vf :RVfunctional 
+map <Leader>vu :RVunittest 
+map <Leader>vm :RVmodel 
+map <Leader>vv :RVview 
+map <Leader>sm :RSmodel 
+map <Leader>su :RSunittest 
+map <Leader>sv :RSview 
+map <C-t> <esc>:tabnew<CR>
+imap <C-l> <Space>=><Space>
+map <C-s> <esc>:w<CR>
+imap <C-s> <esc>:w<CR>
+
 map <Leader>h :FuzzyFinderTextMate<CR>
 map <Leader>l :!ruby <C-r>% \| less<CR>
-map <Leader>m :Rmodel 
 map <Leader>n ,w,t
 map <Leader>o ?def <CR>:nohl<CR>w"zy$:!ruby -I"test" <C-r>% -n <C-r>z<CR>
 map <Leader>p :set paste<CR>i
 map <Leader>rb :Rake!<CR>
 map <Leader>rf :FuzzyFinderTextMateRefreshFiles<CR>
 map <Leader>rw :%s/\s\+$//
-map <Leader>sc :sp db/schema.rb<cr>
-map <Leader>sm :RSmodel 
-map <Leader>su :RSunittest 
-map <Leader>sv :RSview 
 map <Leader>t :!ruby -I"test" -I"spec" %<CR>
-map <Leader>u :Runittest 
-map <Leader>vc :RVcontroller 
-map <Leader>vf :RVfunctional 
-map <Leader>vi :tabe ~/.vimrc<CR>
-map <Leader>vu :RVunittest 
-map <Leader>vm :RVmodel 
-map <Leader>vv :RVview 
-map <Leader>w <C-w>w
 
-map <C-h> :nohl<CR>
-imap <C-l> <Space>=><Space>
-map <C-s> <esc>:w<CR>
-imap <C-s> <esc>:w<CR>
-map <C-t> <esc>:tabnew<CR>
+"map <C-h> :nohl<CR>
 map <C-x> <C-w>c
 map <C-n> :cn<CR>
 map <C-p> :cp<CR>
@@ -66,18 +66,18 @@ set showmatch
 set nowrap
 set backupdir=~/.tmp
 set directory=~/.tmp " Don't clutter my dirs up with swp and tmp files
-set autoread
-set wmh=0
-set viminfo+=!
+set autoread " reads file if changed outside of vim
+set wmh=0 " minimal number of lines used for any window
+set viminfo+=! " save global vars
 set guioptions-=T
 set guifont=Triskweline_10:h10
-set et
-set sw=2
+set et " expand tab
+set sw=2 " spaces for autointent
 set smarttab
-set noincsearch
+set incsearch " show search result
 set ignorecase smartcase
 set laststatus=2  " Always show status line.
-set number 
+set number  " Linenumbers
 set gdefault " assume the /g flag on :s substitutions to replace all matches in a line
 set autoindent " always set autoindenting on
 
@@ -86,7 +86,6 @@ set autoindent " always set autoindenting on
 map <Leader>e :e <C-R>=expand("%:p:h") . '/'<CR>
 map <Leader>s :split <C-R>=expand("%:p:h") . '/'<CR>
 map <Leader>v :vnew <C-R>=expand("%:p:h") . '/'<CR>
-
 " Set the tag file search order
 set tags=./tags;
 
@@ -121,21 +120,6 @@ set statusline+=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 " ========================================================================
 " End of things set by me.
 " ========================================================================
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.

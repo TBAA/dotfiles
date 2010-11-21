@@ -1,6 +1,6 @@
 [user]
-	name = Ben Orenstein
-	email = ben.orenstein@gmail.com 
+	name = Dominik Masur
+	email = dominik.masur@googlemail.com 
 [alias]
 	co = checkout
 [color]
@@ -12,8 +12,8 @@
         meta = yellow 
 
 [core]
-	excludesfile = /home/beno/.gitignore
-	editor = vim
+	excludesfile = ~/.gitignore
+	editor = mate
 [apply]
 	whitespace = nowarn
 
