@@ -14,13 +14,15 @@ augroup END
 
 let mapleader = ","
 
-vmap <Leader>b :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
-map <Leader>cc :!cucumber %<CR>
-map <Leader>co :TComment<CR>
-map <Leader>d odebugger<cr>puts 'debugger'<esc>:w<cr>
+" Git
 map <Leader>gac :Gcommit -m -a ""<LEFT>
 map <Leader>gc :Gcommit -m ""<LEFT>
 map <Leader>gs :Gstatus<CR>
+
+vmap <Leader>b :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
+map <Leader>cc :!cucumber %<CR> " Cucumber Task for this file
+map <Leader>co :TComment<CR>
+map <Leader>d odebugger<cr>puts 'debugger'<esc>:w<cr>
 map <Leader>f :sp spec/factories.rb<CR>
 map <Leader>m :Rmodel 
 map <Leader>sc :sp db/schema.rb<cr>
