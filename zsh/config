@@ -1,8 +1,4 @@
-if [[ -n $SSH_CONNECTION ]]; then
-  export PS1='%n@%m:%~$(git_info_for_prompt)%# '
-else
-  export PS1='%~$(git_info_for_prompt)%# '
-fi
+export PS1='%n@%m:%~$(git_info_for_prompt)%# '
 
 export EDITOR='vim'
 export PATH="~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/git/bin:$PATH"
