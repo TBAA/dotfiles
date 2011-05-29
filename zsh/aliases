@@ -29,3 +29,8 @@ function gc(){
   git pull
   git push
 }
+if [[ $platform == 'Linux' ]]; then
+  alias ls='ls -lrth --color'
+elif [[ $platform == 'Darwin' ]]; then
+  alias ls='ls -lrthG'
+fi
