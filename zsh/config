@@ -1,17 +1,25 @@
-export PS1='%n@%m:%~$(git_info_for_prompt)%# '
-
-export EDITOR='vim'
-export PATH="~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/git/bin:$PATH"
+#export PS1='%n@%m:%~$(git_info_for_prompt)%# '
+autoload -U colors && colors
+smiley="%(?,%{$fg[green]%}:)%{$reset_color%},%{$fg[red]%}:(%{$reset_color%})"
+export PS1=$'%* ${smiley} %n@%m:%{$fg[cyan]%}%~%{$reset_color%}\# %{$fg[magenta]%} $(git_info_for_prompt)%{$reset_color%}\n→ '
+export EDITOR='mvim'
+export BROWSER='chrome'
+export PATH="~/bin:~/.dotfiles/bin:/usr/local/sbin:/usr/local/mysql/bin:$PATH"
 export MANPATH="/usr/local/man:/usr/local/mysql/man:/usr/local/git/man:$MANPATH"
 
 fpath=(~/.zsh/functions $fpath)
 
 autoload -U ~/.zsh/functions/*(:t)
-
+autoload compinit
+compinit
 HISTFILE=~/.zsh_history
 HISTSIZE=1000
 SAVEHIST=1000
-
+REPORTTIME=10
+LISTMAX=0
+setopt autopushd # alias cd pushd
+setopt autocd # cd without cd
+setopt GLOBDOTS # catch files with .
 setopt NO_BG_NICE # don't nice background tasks
 setopt NO_HUP
 setopt NO_LIST_BEEP
@@ -25,7 +33,6 @@ setopt CORRECT
 setopt COMPLETE_IN_WORD
 setopt IGNORE_EOF
 setopt RMSTARSILENT # don't confirm an rm *
-
 setopt APPEND_HISTORY # adds history
 setopt INC_APPEND_HISTORY SHARE_HISTORY  # adds history incrementally and share it across sessions
 setopt HIST_IGNORE_ALL_DUPS  # don't record dupes in history
@@ -39,7 +46,7 @@ bindkey '^[[5D' beginning-of-line
 bindkey '^[[5C' end-of-line
 bindkey '^[[3~' delete-char
 bindkey '^[^N' newtab
-bindkey '^?' backward-delete-char 
+bindkey '^?' backward-delete-char
 
 # Set screen titles to last run command
 setopt extended_glob

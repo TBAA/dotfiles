@@ -1,14 +1,16 @@
 # Handle the fact that this file will be used with multiple OSs
 platform=`uname`
 if [[ $platform == 'Linux' ]]; then
-  alias a='ls -lrth --color'
+  alias ls='ls -lrth --color'
 elif [[ $platform == 'Darwin' ]]; then
-  alias a='ls -lrthG'
+  alias ls='ls -lrthG'
 fi
 
+alias ..="cd .."
 alias aliases='vim ~/.dotfiles/bash/aliases'
+alias be='bundle exec'
 alias bi='bundle install'
-alias c='cd ~/code/codeulate_screencasts'
+alias c='cd ~/code'
 alias d='cd ~/.dotfiles'
 alias g='git status'
 alias gc='git commit -am '
@@ -19,16 +21,25 @@ alias get='sudo apt-get install'
 alias get_db='cap production db:download && rake db:backup:load'
 alias get_db_staging='cap staging db:download && rake db:backup:load SOURCE_ENV=staging'
 alias gg='git lg'
-alias i='screen -rd irc'
-alias irb='irb --readline -r irb/completion'
 alias lm='!! | more'
-alias retag='ctags -R --exclude=.svn --exclude=.git --exclude=log *'
+alias r='rails'
+alias rc='rails console'
 alias rdm="rake db:migrate"
 alias rdtp="rake db:test:prepare"
-alias rc='rails console'
+alias retag='ctags -R --exclude=.svn --exclude=.git --exclude=log *'
+alias rs='rails server --debugger'
 alias rs='rails server'
 alias rsa='rake spec:all'
 alias s='screen -dr rails'
-alias sc='script/console'
+alias sc='rails console'
 alias so='source ~/.dotfiles/bash/aliases'
-alias ss='ruby script/server --debugger'
+alias u='unicorn'
+alias cu='be rake cucumber'
+alais cucumber='be cucumber'
+function gd(){
+  git add .
+  git commit -vam "$*"
+  git pull
+  git push
+  cap deploy
+}

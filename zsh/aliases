@@ -6,7 +6,8 @@ alias c='cd ~/code'
 alias d='cd ~/.dotfiles'
 alias s='screen -dr rails'
 alias so='source ~/.dotfiles/zsh/aliases'
-
+alias debupt='aptitude update & aptitude safe-upgrade & rkhunter --propupd'
+alias be='bundle exec'
 # git
 alias gl='git pull'
 alias gp='git push'
@@ -19,8 +20,8 @@ alias gs='git status'
 alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
 
 # rails
-alias sc='script/console'
-alias ss='script/server -p 3000 --debugger'
 alias tlog='tail -f log/development.log'
 alias r='rails'
 alias rc='rake cucumber'
+
+alias tac='cat -bn | sort -nr | cut -f 2-'

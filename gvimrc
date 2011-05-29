@@ -1,2 +1,2 @@
-colorscheme macvim
+colorscheme vividchalk
 set bg=dark
