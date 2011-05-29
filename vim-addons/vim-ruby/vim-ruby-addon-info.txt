@@ -1,0 +1,13 @@
+{
+  "name" : "vim-ruby",
+  "version" : "dev",
+  "author" : "initial version by Mark Guzman <segfault@hasno.info>",
+  "maintainer" : "of this branch: Marc Weber <marco-oweber@gmx.de>",
+  "repository" : {"type": "git", "url": "git://github.com/vim-ruby/vim-ruby.git"},
+  "repository-this-branch" : {"type": "git", "url": "git://github.com/MarcWeber/vim-ruby.git"},
+  "dependencies" : {
+    "vim-addon-background-cmd": {},
+    "vim-addon-actions": {},
+  },
+  "description" : "bind actions to keys temporarely"
+}

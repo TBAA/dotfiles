@@ -35,7 +35,7 @@ alias sc='rails console'
 alias so='source ~/.dotfiles/bash/aliases'
 alias u='unicorn'
 alias cu='be rake cucumber'
-alais cucumber='be cucumber'
+alias cucumber='be cucumber'
 function gd(){
   git add .
   git commit -vam "$*"

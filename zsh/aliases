@@ -6,16 +6,11 @@ alias c='cd ~/code'
 alias d='cd ~/.dotfiles'
 alias s='screen -dr rails'
 alias so='source ~/.dotfiles/zsh/aliases'
-alias debupt='aptitude update & aptitude safe-upgrade & rkhunter --propupd'
 alias be='bundle exec'
 # git
 alias gl='git pull'
 alias gp='git push'
-alias gd='git diff'
-alias gco='git checkout'
-alias gb='git branch'
 alias gs='git status'
-alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
 
 # rails
 alias tlog='tail -f log/development.log'
