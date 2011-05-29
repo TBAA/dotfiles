@@ -1,4 +1,3 @@
-. ~/.zsh/colors
 . ~/.zsh/config
 . ~/.zsh/aliases
 . ~/.zsh/completion

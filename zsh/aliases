@@ -12,8 +12,6 @@ alias be='bundle exec'
 alias gl='git pull'
 alias gp='git push'
 alias gd='git diff'
-alias gc='git commit'
-alias gca='git commit -a'
 alias gco='git checkout'
 alias gb='git branch'
 alias gs='git status'
@@ -25,3 +23,9 @@ alias r='rails'
 alias rc='rake cucumber'
 
 alias tac='cat -bn | sort -nr | cut -f 2-'
+function gc(){
+  got add .
+  git commit -vam "$*"
+  git pull
+  git push
+}
