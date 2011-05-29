@@ -21,7 +21,6 @@ fun SetupVAM()
         \'vim-ruby-debugger',
         \'cucumber.zip',
         \'fugitive',
-        \'syntastic',
         \'snipMate',
         \'vim-ruby',
         \'vividchalk']
@@ -41,9 +40,9 @@ call SetupVAM()
 " option1:  au VimEnter * call SetupVAM()
 " option2:  au GUIEnter * call SetupVAM()
 " See BUGS sections below [*]
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 
 let mapleader = ","
 
